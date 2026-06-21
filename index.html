@@ -3,88 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EventPlan - Simple Event Planning</title>
+  <title>B&R Events - Event Design & Styling</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">EventPlan</div>
+      <div class="logo">
+        <span class="logo-icon">B<span class="logo-amp">&</span>R</span>
+        <span class="logo-text">Events</span>
+      </div>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#plan">Plan Your Event</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Plan Your Perfect Event</h1>
-    <p>Organize, manage, and celebrate — all in one place.</p>
-    <a href="#create" class="btn">Create an Event</a>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Design Your Dream Event</h1>
+      <p>From elegant decor to stunning cakes — we bring your vision to life.</p>
+      <a href="#plan" class="btn">Start Planning</a>
+    </div>
   </section>
 
-  <section id="features" class="features">
-    <h2>Why EventPlan?</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Easy Scheduling</h3>
-        <p>Pick a date, set a time, and invite your guests in seconds.</p>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">&#127890;</div>
+        <h3>Decoration & Styling</h3>
+        <p>Floral arrangements, table settings, backdrops, and themed decor tailored to your event.</p>
       </div>
-      <div class="feature-card">
-        <h3>Guest Management</h3>
-        <p>Track RSVPs, send reminders, and manage your guest list effortlessly.</p>
+      <div class="service-card">
+        <div class="service-icon">&#127874;</div>
+        <h3>Cakes & Desserts</h3>
+        <p>Custom cakes, dessert tables, and sweet treats designed to match your event theme.</p>
       </div>
-      <div class="feature-card">
-        <h3>Budget Tracking</h3>
-        <p>Keep your event on budget with built-in expense tracking.</p>
+      <div class="service-card">
+        <div class="service-icon">&#129681;</div>
+        <h3>Furniture & Seating</h3>
+        <p>Chairs, tables, lounges, and specialty furniture to set the perfect scene.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127911;</div>
+        <h3>Lighting & Ambiance</h3>
+        <p>String lights, chandeliers, candles, and LED setups for the perfect mood.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128144;</div>
+        <h3>Floral Design</h3>
+        <p>Bouquets, centerpieces, arches, and installations crafted with fresh blooms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127880;</div>
+        <h3>Full Event Design</h3>
+        <p>End-to-end creative direction — concept, layout, styling, and on-site setup.</p>
       </div>
     </div>
   </section>
 
-  <section id="events" class="events">
-    <h2>Upcoming Events</h2>
-    <div class="event-list" id="event-list">
-      <div class="event-card">
-        <span class="event-date">Jul 15, 2026</span>
-        <h3>Summer Garden Party</h3>
-        <p>An evening of food, drinks, and live music in the garden.</p>
-        <span class="event-guests">24 guests</span>
+  <section id="portfolio" class="portfolio">
+    <h2>Our Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(135deg, #f9d4d4, #f5e6ca)"></div>
+        <h3>Rose Garden Wedding</h3>
+        <p>Romantic outdoor ceremony with blush florals, gold accents, and draped fabric.</p>
       </div>
-      <div class="event-card">
-        <span class="event-date">Aug 02, 2026</span>
-        <h3>Tech Meetup</h3>
-        <p>Monthly gathering for local developers and designers.</p>
-        <span class="event-guests">50 guests</span>
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(135deg, #f5e6ca, #fdf2e9)"></div>
+        <h3>Golden Anniversary Gala</h3>
+        <p>Luxurious ballroom setup with gold tableware, candelabras, and a 5-tier cake.</p>
       </div>
-      <div class="event-card">
-        <span class="event-date">Sep 10, 2026</span>
-        <h3>Charity Gala</h3>
-        <p>Formal dinner to raise funds for community programs.</p>
-        <span class="event-guests">120 guests</span>
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0)"></div>
+        <h3>Baby Shower Brunch</h3>
+        <p>Soft pink palette with balloon garlands, dessert table, and custom signage.</p>
       </div>
     </div>
   </section>
 
-  <section id="create" class="create-event">
-    <h2>Create a New Event</h2>
+  <section id="plan" class="plan-event">
+    <h2>Plan Your Event</h2>
+    <p class="section-subtitle">Tell us about your dream event and we'll help you design it.</p>
     <form id="event-form">
-      <input type="text" id="event-name" placeholder="Event Name" required>
-      <input type="date" id="event-date" required>
-      <input type="number" id="event-guests" placeholder="Expected Guests" min="1" required>
-      <textarea id="event-desc" placeholder="Description" rows="3" required></textarea>
-      <button type="submit" class="btn">Add Event</button>
+      <div class="form-row">
+        <input type="text" id="client-name" placeholder="Your Name" required>
+        <input type="email" id="client-email" placeholder="Email Address" required>
+      </div>
+      <input type="text" id="event-name" placeholder="Event Name (e.g. Sarah's Wedding)" required>
+      <div class="form-row">
+        <input type="date" id="event-date" required>
+        <input type="number" id="event-guests" placeholder="Number of Guests" min="1" required>
+      </div>
+      <div class="checkbox-group">
+        <label>Services Needed:</label>
+        <div class="checkbox-row">
+          <label><input type="checkbox" value="Decoration"> Decoration</label>
+          <label><input type="checkbox" value="Cake"> Cake & Desserts</label>
+          <label><input type="checkbox" value="Furniture"> Chairs & Furniture</label>
+          <label><input type="checkbox" value="Florals"> Florals</label>
+          <label><input type="checkbox" value="Lighting"> Lighting</label>
+          <label><input type="checkbox" value="Full Design"> Full Event Design</label>
+        </div>
+      </div>
+      <textarea id="event-desc" placeholder="Describe your vision — colors, theme, style, inspiration..." rows="4"></textarea>
+      <button type="submit" class="btn">Submit Request</button>
     </form>
+    <div id="confirmation" class="confirmation hidden">
+      <h3>Thank you!</h3>
+      <p>We've received your event request. Our design team will be in touch soon.</p>
+    </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
-    <p>Have questions? Reach out and we'll help you plan something great.</p>
-    <a href="mailto:hello@eventplan.example" class="btn btn-outline">Contact Us</a>
+    <h2>Let's Create Something Beautiful</h2>
+    <p>Ready to start designing? Get in touch with our team.</p>
+    <div class="contact-info">
+      <a href="mailto:hello@brevents.example" class="btn btn-outline">Email Us</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 EventPlan. All rights reserved.</p>
+    <div class="footer-logo">B<span class="logo-amp">&</span>R Events</div>
+    <p>&copy; 2026 B&R Events. All rights reserved.</p>
   </footer>
 
   <script src="app.js"></script>
