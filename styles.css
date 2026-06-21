@@ -79,7 +79,8 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -356,17 +357,23 @@ footer .logo-amp { opacity: 0.7; }
 
 footer p { font-size: 0.85rem; opacity: 0.7; }
 
-/* Portfolio card as link */
-a.portfolio-card {
-  text-decoration: none;
-  color: inherit;
+/* Portfolio card clickable */
+.portfolio-card[onclick] {
   cursor: pointer;
+}
+
+.portfolio-link {
+  display: block;
+  padding: 0 1.5rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-dark);
 }
 
 /* Portfolio detail pages */
 .portfolio-hero {
   background: var(--cream);
-  padding: 0;
+  padding: 0 !important;
 }
 
 .portfolio-hero-img {
@@ -380,6 +387,11 @@ a.portfolio-card {
   max-width: 800px;
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
+  background: #fff;
+}
+
+.portfolio-detail + footer {
+  margin-top: 0;
 }
 
 .back-link {
@@ -526,6 +538,13 @@ a.portfolio-card {
   padding: 0.5rem 1.4rem !important;
   font-size: 0.85rem !important;
   border-radius: 6px;
+  color: #fff !important;
+  background: var(--gold);
+}
+
+.btn-nav:hover {
+  background: var(--gold-dark);
+  color: #fff !important;
 }
 
 /* Auth page */
