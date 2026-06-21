@@ -53,49 +53,6 @@
     </div>
   </div>
 
-  <script>
-    var isSignup = false;
-
-    function toggleMode(signup) {
-      isSignup = signup;
-      document.getElementById('auth-heading').textContent = signup ? 'Create your account' : 'Log in to your account';
-      document.getElementById('auth-submit').textContent = signup ? 'Create Account' : 'Log In';
-      document.getElementById('name-fields').classList.toggle('hidden', !signup);
-      document.getElementById('phone-field').classList.toggle('hidden', !signup);
-      document.getElementById('confirm-field').classList.toggle('hidden', !signup);
-      document.getElementById('login-extras').classList.toggle('hidden', signup);
-      document.getElementById('signup-extras').classList.toggle('hidden', !signup);
-
-      var firstName = document.getElementById('first-name');
-      var lastName = document.getElementById('last-name');
-      var confirm = document.getElementById('auth-confirm');
-      if (signup) {
-        firstName.required = true;
-        lastName.required = true;
-        confirm.required = true;
-      } else {
-        firstName.required = false;
-        lastName.required = false;
-        confirm.required = false;
-      }
-    }
-
-    document.getElementById('switch-to-signup').addEventListener('click', function (e) {
-      e.preventDefault();
-      toggleMode(true);
-    });
-
-    document.getElementById('switch-to-login').addEventListener('click', function (e) {
-      e.preventDefault();
-      toggleMode(false);
-    });
-
-    document.getElementById('auth-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      window.location.href = 'index.html';
-    });
-
-    if (window.location.hash === '#signup') toggleMode(true);
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
