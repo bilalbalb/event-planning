@@ -2,9 +2,7 @@ name: CI - Build & Quality Gate
 
 on:
   pull_request:
-    branches: [main, master]
   push:
-    branches: [main, master]
 
 jobs:
   build:
