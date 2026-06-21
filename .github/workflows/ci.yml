@@ -55,7 +55,9 @@ jobs:
             links=$(grep -oP '(?:href|src)="([^"#][^"]*)"' "$file" | grep -oP '"[^"]*"' | tr -d '"' | grep -v '^http' | grep -v '^mailto' || true)
             dir=$(dirname "$file")
             for link in $links; do
-              target="$dir/$link"
+              link_path="${link%%#*}"
+              if [ -z "$link_path" ]; then continue; fi
+              target="$dir/$link_path"
               if [ ! -f "$target" ]; then
                 echo "  BROKEN: $file -> $link"
                 errors=$((errors + 1))
