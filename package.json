@@ -1,0 +1,21 @@
+{
+  "name": "event-planning",
+  "version": "1.0.0",
+  "description": "B&R Events - Event Design & Styling",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["*.js", "!jest.config.js"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1"
+  }
+}

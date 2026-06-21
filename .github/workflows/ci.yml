@@ -81,10 +81,36 @@ jobs:
             *.svg
             pic/
 
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage
+          path: coverage/
+
   sonarcloud:
     name: SonarCloud Analysis
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, test]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -105,7 +131,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    needs: [build, sonarcloud]
+    needs: [build, test, sonarcloud]
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     permissions:
       pages: write
