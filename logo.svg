@@ -6,8 +6,13 @@
     </linearGradient>
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#c9a84c"/>
-      <stop offset="50%" style="stop-color:#e8a0bf"/>
+      <stop offset="40%" style="stop-color:#d4a860"/>
+      <stop offset="60%" style="stop-color:#e8a0bf"/>
       <stop offset="100%" style="stop-color:#d4789b"/>
+    </linearGradient>
+    <linearGradient id="amp-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a860"/>
+      <stop offset="100%" style="stop-color:#e8a0bf"/>
     </linearGradient>
   </defs>
 
@@ -17,21 +22,18 @@
   <circle cx="200" cy="200" r="168" fill="none" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.4"/>
 
   <!-- B letter -->
-  <text x="112" y="245" font-family="Georgia, 'Playfair Display', serif" font-size="150" font-weight="700" fill="url(#text-grad)">B</text>
+  <text x="200" y="235" font-family="Georgia, 'Playfair Display', serif" font-size="140" font-weight="700" fill="url(#text-grad)" text-anchor="middle" dx="-65">B</text>
 
-  <!-- Ampersand -->
-  <text x="175" y="215" font-family="Georgia, 'Playfair Display', serif" font-size="60" font-weight="400" fill="#c9a84c" opacity="0.7">&amp;</text>
+  <!-- Ampersand — centered between B and R, slightly raised -->
+  <text x="200" y="210" font-family="Georgia, 'Playfair Display', serif" font-size="55" font-weight="400" fill="url(#amp-grad)" text-anchor="middle" opacity="0.85">&amp;</text>
 
   <!-- R letter -->
-  <text x="218" y="245" font-family="Georgia, 'Playfair Display', serif" font-size="150" font-weight="700" fill="url(#text-grad)">R</text>
+  <text x="200" y="235" font-family="Georgia, 'Playfair Display', serif" font-size="140" font-weight="700" fill="url(#text-grad)" text-anchor="middle" dx="65">R</text>
 
   <!-- Decorative line left -->
-  <line x1="70" y1="275" x2="160" y2="275" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.5"/>
+  <line x1="55" y1="260" x2="150" y2="260" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.4"/>
   <!-- Decorative line right -->
-  <line x1="240" y1="275" x2="330" y2="275" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.5"/>
+  <line x1="250" y1="260" x2="345" y2="260" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.4"/>
   <!-- Small diamond center -->
-  <polygon points="200,270 205,275 200,280 195,275" fill="url(#bg-grad)" opacity="0.6"/>
-
-  <!-- Subtitle -->
-  <text x="200" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="300" fill="#7a6a6a" text-anchor="middle" letter-spacing="8">EVENTS</text>
+  <polygon points="200,255 206,260 200,265 194,260" fill="url(#bg-grad)" opacity="0.5"/>
 </svg>
