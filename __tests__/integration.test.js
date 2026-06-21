@@ -14,11 +14,6 @@ function loadPage(filename) {
   return html;
 }
 
-function loadPageWithJS(filename) {
-  loadPage(filename);
-  document.dispatchEvent(new Event('DOMContentLoaded'));
-}
-
 describe('Landing page integration', () => {
   beforeEach(() => {
     loadPage('index.html');
