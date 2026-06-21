@@ -4,7 +4,6 @@ const path = require('path');
 const {
   initEventForm,
   initAuthForm,
-  toggleAuthMode,
   validateEmail,
   validatePassword
 } = require('../app');
