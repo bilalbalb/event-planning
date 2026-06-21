@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a84c"/>
+      <stop offset="100%" style="stop-color:#d4789b"/>
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a84c"/>
+      <stop offset="50%" style="stop-color:#e8a0bf"/>
+      <stop offset="100%" style="stop-color:#d4789b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="200" cy="200" r="190" fill="url(#bg-grad)"/>
+  <circle cx="200" cy="200" r="175" fill="#fdf8f0"/>
+  <circle cx="200" cy="200" r="168" fill="none" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- B letter -->
+  <text x="112" y="245" font-family="Georgia, 'Playfair Display', serif" font-size="150" font-weight="700" fill="url(#text-grad)">B</text>
+
+  <!-- Ampersand -->
+  <text x="175" y="215" font-family="Georgia, 'Playfair Display', serif" font-size="60" font-weight="400" fill="#c9a84c" opacity="0.7">&amp;</text>
+
+  <!-- R letter -->
+  <text x="218" y="245" font-family="Georgia, 'Playfair Display', serif" font-size="150" font-weight="700" fill="url(#text-grad)">R</text>
+
+  <!-- Decorative line left -->
+  <line x1="70" y1="275" x2="160" y2="275" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.5"/>
+  <!-- Decorative line right -->
+  <line x1="240" y1="275" x2="330" y2="275" stroke="url(#bg-grad)" stroke-width="1.5" opacity="0.5"/>
+  <!-- Small diamond center -->
+  <polygon points="200,270 205,275 200,280 195,275" fill="url(#bg-grad)" opacity="0.6"/>
+
+  <!-- Subtitle -->
+  <text x="200" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="300" fill="#7a6a6a" text-anchor="middle" letter-spacing="8">EVENTS</text>
+</svg>
