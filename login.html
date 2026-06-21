@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B&R Events - Login</title>
+  <title>B&R Events - Welcome</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,59 +14,88 @@
       <a href="index.html" class="auth-logo">
         <img src="logo.svg" alt="B&R Events" width="80" height="80">
       </a>
-      <h1>Welcome Back</h1>
+      <h1>Welcome</h1>
       <p>Plan your next unforgettable event.</p>
     </div>
     <div class="auth-right">
       <div class="auth-card">
-        <div class="auth-tabs">
-          <button class="auth-tab active" data-tab="login">Log In</button>
-          <button class="auth-tab" data-tab="signup">Sign Up</button>
-        </div>
+        <h2 class="auth-heading" id="auth-heading">Log in to your account</h2>
 
-        <form id="login-form" class="auth-form">
-          <input type="email" placeholder="Email Address" required>
-          <input type="password" placeholder="Password" required>
-          <button type="submit" class="btn">Log In</button>
-          <p class="auth-link">Forgot your password? <a href="#">Reset it</a></p>
-        </form>
-
-        <form id="signup-form" class="auth-form hidden">
-          <div class="form-row">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
+        <form id="auth-form" class="auth-form">
+          <div id="name-fields" class="form-row hidden">
+            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="last-name" placeholder="Last Name">
           </div>
-          <input type="email" placeholder="Email Address" required>
-          <input type="tel" placeholder="Phone Number">
-          <input type="password" placeholder="Password" required>
-          <input type="password" placeholder="Confirm Password" required>
-          <button type="submit" class="btn">Create Account</button>
-          <p class="auth-link">By signing up, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
+          <input type="email" id="auth-email" placeholder="Email Address" required>
+          <div id="phone-field" class="hidden">
+            <input type="tel" placeholder="Phone Number" style="width:100%">
+          </div>
+          <input type="password" id="auth-password" placeholder="Password" required>
+          <div id="confirm-field" class="hidden">
+            <input type="password" id="auth-confirm" placeholder="Confirm Password">
+          </div>
+
+          <button type="submit" class="btn" id="auth-submit">Log In</button>
+
+          <div id="login-extras" class="auth-extras">
+            <p class="auth-link">Forgot your password? <a href="#">Reset it</a></p>
+            <div class="auth-divider"><span>or</span></div>
+            <p class="auth-link">Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+          </div>
+
+          <div id="signup-extras" class="auth-extras hidden">
+            <p class="auth-link">By signing up, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
+            <div class="auth-divider"><span>or</span></div>
+            <p class="auth-link">Already have an account? <a href="#" id="switch-to-login">Log in</a></p>
+          </div>
         </form>
       </div>
     </div>
   </div>
 
   <script>
-    document.querySelectorAll('.auth-tab').forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        document.querySelectorAll('.auth-tab').forEach(function (t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        var target = tab.getAttribute('data-tab');
-        document.getElementById('login-form').classList.toggle('hidden', target !== 'login');
-        document.getElementById('signup-form').classList.toggle('hidden', target !== 'signup');
-      });
+    var isSignup = false;
+
+    function toggleMode(signup) {
+      isSignup = signup;
+      document.getElementById('auth-heading').textContent = signup ? 'Create your account' : 'Log in to your account';
+      document.getElementById('auth-submit').textContent = signup ? 'Create Account' : 'Log In';
+      document.getElementById('name-fields').classList.toggle('hidden', !signup);
+      document.getElementById('phone-field').classList.toggle('hidden', !signup);
+      document.getElementById('confirm-field').classList.toggle('hidden', !signup);
+      document.getElementById('login-extras').classList.toggle('hidden', signup);
+      document.getElementById('signup-extras').classList.toggle('hidden', !signup);
+
+      var firstName = document.getElementById('first-name');
+      var lastName = document.getElementById('last-name');
+      var confirm = document.getElementById('auth-confirm');
+      if (signup) {
+        firstName.required = true;
+        lastName.required = true;
+        confirm.required = true;
+      } else {
+        firstName.required = false;
+        lastName.required = false;
+        confirm.required = false;
+      }
+    }
+
+    document.getElementById('switch-to-signup').addEventListener('click', function (e) {
+      e.preventDefault();
+      toggleMode(true);
     });
 
-    document.getElementById('login-form').addEventListener('submit', function (e) {
+    document.getElementById('switch-to-login').addEventListener('click', function (e) {
+      e.preventDefault();
+      toggleMode(false);
+    });
+
+    document.getElementById('auth-form').addEventListener('submit', function (e) {
       e.preventDefault();
       window.location.href = 'index.html';
     });
 
-    document.getElementById('signup-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      window.location.href = 'index.html';
-    });
+    if (window.location.hash === '#signup') toggleMode(true);
   </script>
 </body>
 </html>

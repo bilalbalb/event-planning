@@ -356,6 +356,166 @@ footer .logo-amp { opacity: 0.7; }
 
 footer p { font-size: 0.85rem; opacity: 0.7; }
 
+/* Portfolio card as link */
+a.portfolio-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Portfolio detail pages */
+.portfolio-hero {
+  background: var(--cream);
+  padding: 0;
+}
+
+.portfolio-hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--gold-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.portfolio-detail h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.portfolio-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-meta span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  padding: 0.4rem 1rem;
+  background: var(--pink-light);
+  border-radius: 20px;
+}
+
+.portfolio-body h2 {
+  text-align: left;
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  margin: 2rem 0 1rem;
+}
+
+.portfolio-body p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+}
+
+.portfolio-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.portfolio-list li strong {
+  color: var(--gold-dark);
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  background: var(--cream);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 20px;
+  color: var(--gold-dark);
+  font-weight: 500;
+}
+
+.portfolio-cta {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--pink-light), var(--cream));
+  border-radius: 12px;
+  text-align: center;
+}
+
+.portfolio-cta h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-cta p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Auth extras */
+.auth-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-extras { margin-top: 0.5rem; }
+
+.auth-divider {
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.auth-divider span {
+  background: var(--cream);
+  padding: 0 1rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e0d5c5;
+}
+
 /* Nav auth buttons */
 .nav-login {
   color: var(--gold-dark) !important;
@@ -411,33 +571,6 @@ footer p { font-size: 0.85rem; opacity: 0.7; }
 .auth-card {
   width: 100%;
   max-width: 420px;
-}
-
-.auth-tabs {
-  display: flex;
-  gap: 0;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #e0d5c5;
-}
-
-.auth-tab {
-  flex: 1;
-  padding: 0.8rem;
-  background: none;
-  border: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-light);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: all 0.2s;
-}
-
-.auth-tab.active {
-  color: var(--gold-dark);
-  border-bottom-color: var(--gold);
 }
 
 .auth-form {
