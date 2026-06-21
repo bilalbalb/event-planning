@@ -196,7 +196,15 @@ section h2 {
   box-shadow: 0 8px 24px rgba(201,168,76,0.12);
 }
 
-.service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.service-icon {
+  margin-bottom: 1rem;
+  color: var(--gold-dark);
+}
+
+.service-icon svg {
+  width: 48px;
+  height: 48px;
+}
 .service-card h3 { color: var(--gold-dark); margin-bottom: 0.5rem; font-size: 1.1rem; }
 .service-card p { color: var(--text-light); font-size: 0.95rem; }
 
